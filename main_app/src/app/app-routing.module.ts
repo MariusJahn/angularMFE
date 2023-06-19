@@ -11,6 +11,7 @@ const routes: Routes = [
     path: 'mitarbeiter',
     loadComponent: () => import('mitarbeiter/AppComponent')
       .then(m => m.AppComponent)
+      .catch(err => console.log(err)),
   },
   {
     path: 'subheader',
@@ -20,17 +21,18 @@ const routes: Routes = [
   {
     path: 'module',
     loadChildren: () => import('mitarbeiter/Module')
-      .then(m => m.AppModule)
+      .then(m => m.AppModule),
   },
   {
     path: 'dynamic',
-    loadComponent: () =>
+    loadChildren: () =>
       loadRemoteModule({
-        type: 'module',
-        remoteEntry: 'http://localhost:4400/remoteEntry.js',
+        type: 'manifest',
+        remoteName: 'mitarbeiter',
         exposedModule: './Module'
       })
       .then(m => m.AppModule)
+      .catch(err => console.log(err))
   },
 
 ];
