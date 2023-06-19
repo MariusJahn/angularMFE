@@ -28,13 +28,6 @@ module.exports = {
     new ModuleFederationPlugin({
       library: { type: "module" },
 
-      // For remotes (please adjust)
-      // name: "mainApp",
-      // filename: "remoteEntry.js",
-      // exposes: {
-      //     './Component': './/src/app/app.component.ts',
-      // },
-
       // For hosts (please adjust)
       remotes: {
         "schichten": "http://localhost:4300/remoteEntry.js",
@@ -48,7 +41,8 @@ module.exports = {
         "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
 
         ...sharedMappings.getDescriptors()
-      })
+      }),
+
 
     }),
     sharedMappings.getPlugin()

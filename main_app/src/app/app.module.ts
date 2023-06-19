@@ -12,7 +12,7 @@ import { SchichtenansichtComponent } from './schichtenansicht/schichtenansicht.c
     AppComponent,
     HeaderComponent,
     MitarbeiteransichtComponent,
-    SchichtenansichtComponent
+    SchichtenansichtComponent,
   ],
   imports: [
     BrowserModule,

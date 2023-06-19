@@ -32,7 +32,9 @@ module.exports = {
       name: "mitarbeiter",
       filename: "remoteEntry.js",
       exposes: {
-        './Component': './src/app/app.component.ts',
+        './AppComponent': './src/app/app.component.ts',
+        './Module': './src/app/app.module.ts',
+        './Subheader': './src/app/subheader/subheader.component.ts',
       },
 
       shared: share({
@@ -42,7 +44,7 @@ module.exports = {
         "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
 
         ...sharedMappings.getDescriptors()
-      })
+      }),
 
     }),
     sharedMappings.getPlugin()
