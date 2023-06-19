@@ -5,12 +5,10 @@ import { SubheaderComponent } from './subheader/subheader.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SubheaderComponent
   ],
   imports: [
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
