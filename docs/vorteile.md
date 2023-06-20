@@ -12,3 +12,5 @@
   - An Weihnachten anderer Header mit mehr User-Interaktion etc.
 
 - Möglichkeit verschiedene Technologien zu verwenden / React Mixed with Angular etc.
+
+- Evtl Lassen sich Store, Fassade und API so modularisieren, dass man bestimmte Pakete als MFE mit integrieren und herausbauen lassen.
