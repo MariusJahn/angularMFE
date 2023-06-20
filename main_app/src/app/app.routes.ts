@@ -14,17 +14,6 @@ export const APP_ROUTES: Routes = [
       .then(m => m.AppComponent)
       .catch(err => console.log(err)),
   },
-  /* {
-    path: 'mitarbeiter',
-    loadComponent: () => import('mitarbeiter/AppComponent')
-      .then(m => m.AppComponent)
-      .catch(err => console.log(err)),
-  }, */
-  {
-    path: 'subheader',
-    loadComponent: () => import('mitarbeiter/Subheader')
-      .then(m => m.SubheaderComponent)
-  },
   {
     path: 'mitarbeiter',
     loadChildren: () => import('mitarbeiter/AppModule')

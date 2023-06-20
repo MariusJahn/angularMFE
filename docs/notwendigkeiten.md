@@ -1,4 +1,6 @@
-## Notwendigkeiten
+## Notwendigkeiten und Probleme
+
+### Notwendigkeiten
 
 - Das [Paket](https://www.npmjs.com/package/@angular-architects/module-federation) kommt mit als Dependency in das Projekt und muss dementsprechend mit gewartet werden.
 
@@ -8,4 +10,10 @@
 
 Bonus: Man kann Components auch direkt um die Loadfunktion im Router mappen um die Komponente zu nutzen. Siehe hier im [Video](https://www.youtube.com/watch?v=ox0aoy2KHK0)
 
-Zusätzlich kann ich mir noch vorstellen das die autorisierung etwas hakeliger wird.
+- Man muss eine Entscheidung treffen ob Mono oder Multi Repository -> Im Endeffekt laufen die Anwendungen eh in einem Container.
+
+### Probleme
+
+- ich kann vorstellen das die autorisierung etwas hakeliger wird. Muss man sich nochmal anschauen.
+
+- Die Struktur an sich wird erstmal Komplexer und größer
