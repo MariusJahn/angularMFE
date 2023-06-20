@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SubheaderComponent } from './subheader/subheader.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @Component({
   standalone: true,
