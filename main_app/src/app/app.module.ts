@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MitarbeiteransichtComponent } from './mitarbeiteransicht/mitarbeiteransicht.component';
 import { SchichtenansichtComponent } from './schichtenansicht/schichtenansicht.component';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { SchichtenansichtComponent } from './schichtenansicht/schichtenansicht.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [],
   bootstrap: [AppComponent]
