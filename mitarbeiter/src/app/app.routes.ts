@@ -5,4 +5,6 @@ import { AppComponent } from './app.component';
 
 export const MITARBEITER_ROUTES: Routes = [
   { path: '', component: AppComponent},
+  { path: 'arbeitszeiten', component: ArbeitszeitenComponent},
+  { path: 'schichten', component: SchichtenComponent},
 ];

@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { ArbeitszeitenComponent } from "./arbeitszeiten.component";
+import { SchichtenComponent } from "./schichten.component";
 import { SubheaderModule } from "../subheader/subheader.module";
 
 @NgModule({
@@ -9,7 +9,7 @@ import { SubheaderModule } from "../subheader/subheader.module";
     SubheaderModule,
   ],
   declarations: [
-    ArbeitszeitenComponent,
+    SchichtenComponent,
   ]
 })
-export class ArbeitszeitenModule { }
+export class SchichtenModule { }
