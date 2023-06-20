@@ -7,7 +7,7 @@ import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     RouterModule.forChild(APP_ROUTES)
