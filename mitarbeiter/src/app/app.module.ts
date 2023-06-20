@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ArbeitszeitenComponent } from './arbeitszeiten/arbeitszeiten.component';
 import { SchichtenComponent } from './schichten/schichten.component';
 import { SubheaderComponent } from './subheader/subheader.component';
 import { BrowserModule } from '@angular/platform-browser';
