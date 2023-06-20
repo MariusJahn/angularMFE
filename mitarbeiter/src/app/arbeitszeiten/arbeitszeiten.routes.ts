@@ -3,7 +3,7 @@ import { ArbeitszeitenComponent } from './arbeitszeiten.component';
 
 export const ARBEITSZEITEN_ROUTES: Routes = [
     {
-      path: '',
+      path: 'arbeitszeiten',
       component: ArbeitszeitenComponent
     }
 ];

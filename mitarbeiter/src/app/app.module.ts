@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SchichtenComponent } from './schichten/schichten.component';
 import { SubheaderComponent } from './subheader/subheader.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { APP_ROUTES } from './app.routes';
+import { MITARBEITER_ROUTES } from './app.routes';
 import { ArbeitszeitenModule } from './arbeitszeiten/arbeitszeiten.module';
 
 @NgModule({
@@ -15,9 +14,8 @@ import { ArbeitszeitenModule } from './arbeitszeiten/arbeitszeiten.module';
     SchichtenComponent,
   ],
   imports: [
-    BrowserModule,
     ArbeitszeitenModule,
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forChild(MITARBEITER_ROUTES),
   ],
   providers: [],
   bootstrap: [AppComponent]
