@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import { ArbeitszeitenComponent } from './arbeitszeiten/arbeitszeiten.component';
 import { SchichtenComponent } from './schichten/schichten.component';
+import { AppComponent } from './app.component';
 
-export const APP_ROUTES: Routes = [
-  { path: '/schichten', component: SchichtenComponent},
-  { path: '/arbeitszeiten', component: ArbeitszeitenComponent}
+export const MITARBEITER_ROUTES: Routes = [
+  { path: '', component: AppComponent},
+  { path: 'arbeitszeiten', component: ArbeitszeitenComponent},
+  { path: 'schichten', component: SchichtenComponent},
 ];

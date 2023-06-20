@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { loadRemoteModule } from '@angular-architects/module-federation';
+import { Component, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'main_app';
+  viewContainer: ViewContainerRef;
+
+  constructor(public viewContainerRef: ViewContainerRef) {
+    this.viewContainer = viewContainerRef;
+  }
+
+  async load(): Promise<void> {
+    console.log("clicked!");
+
+    const m = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4300/remoteEntry.js',
+      exposedModule: './AppComponent'
+    });
+
+    console.log(m.AppComponent);
+
+    const ref = this.viewContainer.createComponent(m.AppComponent);
+    // const compInstance = ref.instance;
+}
 }

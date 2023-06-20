@@ -1,7 +1,12 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const { mf, shareAll } = require("@angular-architects/module-federation/webpack");
+const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
+const share = mf.share;
 
+const sharedMappings = new mf.SharedMappings();
+sharedMappings.register(
+  path.join(__dirname, 'tsconfig.json'),
+  [/* mapped paths to share */]);
 
 module.exports = {
   output: {
@@ -10,6 +15,11 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: false
+  },
+  resolve: {
+    alias: {
+      ...sharedMappings.getAliases(),
+    }
   },
   experiments: {
     outputModule: true
@@ -23,18 +33,21 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         './AppComponent': './src/app/app.component.ts',
-        './Module': './src/app/app.module.ts',
+        './AppModule': './src/app/app.module.ts',
+        './ArbeitszeitenModule': './src/app/arbeitszeiten/arbeitszeiten.module.ts',
         './Subheader': './src/app/subheader/subheader.component.ts',
       },
 
-      shared: {
-        ...shareAll({
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: 'auto',
-        }),
-      },
+      shared: share({
+        "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+
+        ...sharedMappings.getDescriptors()
+      })
 
     }),
+    sharedMappings.getPlugin()
   ],
 };

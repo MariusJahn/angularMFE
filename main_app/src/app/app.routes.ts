@@ -1,32 +1,28 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
-import { MitarbeiteransichtComponent } from './mitarbeiteransicht/mitarbeiteransicht.component';
-import { SchichtenansichtComponent } from './schichtenansicht/schichtenansicht.component';
+
+import { SchichtenansichtComponent } from './feature/schichtenansicht/schichtenansicht.component';
+import { MitarbeiteransichtComponent } from './feature/mitarbeiteransicht/components/mitarbeiteransicht.component';
+
 
 export const APP_ROUTES: Routes = [
   { path: 'mitarbeiteransicht-component', component: MitarbeiteransichtComponent },
   { path: 'schichtenansicht-component', component: SchichtenansichtComponent },
   {
     path: 'schichten',
-    loadComponent: () => import('schichten/AppComponent')
-      .then(m => m.AppComponent)
+    loadChildren: () => import('schichten/AppModule')
+      .then(m => m.AppModule)
       .catch(err => console.log(err)),
   },
   {
     path: 'mitarbeiter',
-    loadComponent: () => import('mitarbeiter/AppComponent')
-      .then(m => m.AppComponent)
-      .catch(err => console.log(err)),
-  },
-  {
-    path: 'subheader',
-    loadComponent: () => import('mitarbeiter/Subheader')
-      .then(m => m.SubheaderComponent)
-  },
-  {
-    path: 'module',
-    loadChildren: () => import('mitarbeiter/Module')
+    loadChildren: () => import('mitarbeiter/AppModule')
       .then(m => m.AppModule),
+  },
+  {
+    path: 'arbeitszeiten',
+    loadChildren: () => import('mitarbeiter/ArbeitszeitenModule')
+      .then(m => m.ArbeitszeitenModule),
   },
   {
     path: 'dynamic',
