@@ -8,6 +8,12 @@ const routes: Routes = [
   { path: 'mitarbeiteransicht-component', component: MitarbeiteransichtComponent },
   { path: 'schichtenansicht-component', component: SchichtenansichtComponent },
   {
+    path: 'schichten',
+    loadComponent: () => import('schichten/AppComponent')
+      .then(m => m.AppComponent)
+      .catch(err => console.log(err)),
+  },
+  {
     path: 'mitarbeiter',
     loadComponent: () => import('mitarbeiter/AppComponent')
       .then(m => m.AppComponent)
