@@ -10,8 +10,8 @@ export const APP_ROUTES: Routes = [
   { path: 'schichtenansicht-component', component: SchichtenansichtComponent },
   {
     path: 'schichten',
-    loadComponent: () => import('schichten/AppComponent')
-      .then(m => m.AppComponent)
+    loadChildren: () => import('schichten/AppModule')
+      .then(m => m.AppModule)
       .catch(err => console.log(err)),
   },
   {

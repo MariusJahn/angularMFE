@@ -33,6 +33,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         './AppComponent': './src/app/app.component.ts',
+        './AppModule': './src/app/app.module.ts',
       },
 
 
