@@ -25,8 +25,13 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'module',
-    loadChildren: () => import('mitarbeiter/Module')
+    loadChildren: () => import('mitarbeiter/AppModule')
       .then(m => m.AppModule),
+  },
+  {
+    path: 'arbeitszeiten',
+    loadChildren: () => import('mitarbeiter/ArbeitszeitenModule')
+      .then(m => m.ArbeitszeitenModule),
   },
   {
     path: 'dynamic',
