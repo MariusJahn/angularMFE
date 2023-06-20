@@ -10,7 +10,7 @@
 
 Bonus: Man kann Components auch direkt um die Loadfunktion im Router mappen um die Komponente zu nutzen. Siehe hier im [Video](https://www.youtube.com/watch?v=ox0aoy2KHK0)
 
-- Man muss eine Entscheidung treffen ob Mono oder Multi Repository -> Im Endeffekt laufen die Anwendungen eh in einem Container.
+- Man muss eine Entscheidung treffen ob Mono oder Multi Repository -> Im Endeffekt laufen die Anwendungen eh in eigenen Containern. Vorteilhaft wären einzelne Repos, aufgrund des Issuetrackings und der Commithistorie. So bleiben die Anwendungen Fachlich getrennt. Allerdings muss man wenn man die gesamte Anwendung laufen lassen will, alle Repositorys laden und auch starten. Das wäre mühseliger. Jedoch hat man den größeren Vorteil wenn die Frontends von separaten Teams entwickelt werden.
 
 ### Probleme
 
