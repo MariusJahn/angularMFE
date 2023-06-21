@@ -10,7 +10,7 @@ export class ArbeitszeitenComponent {
   pokemonAPI = new PokemonAPI();
   pokemons: string[] = []
 
-  async ngOnInit(): Promise<void> {
+  async loadPokemons(): Promise<void> {
     let data = await this.pokemonAPI.getPokemons();
     console.log(data);
 
