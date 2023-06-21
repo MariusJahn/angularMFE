@@ -1,4 +1,4 @@
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { loadRemoteEntry, loadRemoteModule } from '@angular-architects/module-federation';
 import { Component, ViewContainerRef } from '@angular/core';
 
 @Component({
@@ -9,6 +9,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 export class AppComponent {
   title = 'main_app';
   viewContainer: ViewContainerRef;
+  pokemons = [];
 
   constructor(public viewContainerRef: ViewContainerRef) {
     this.viewContainer = viewContainerRef;
@@ -27,5 +28,25 @@ export class AppComponent {
 
     const ref = this.viewContainer.createComponent(m.AppComponent);
     // const compInstance = ref.instance;
+  }
+
+  async loadPokemonAPI(): Promise<void> {
+    console.log("clicked!");
+
+    const m = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4400/remoteEntry.js',
+      exposedModule: './PokemonAPI'
+    });
+
+    console.log(m.PokemonAPI);
+
+    let pokemonAPI = new m.PokemonAPI();
+
+    let data = await pokemonAPI.getPokemons();
+
+    this.pokemons = data.results.map((p: any) => p.name);
+
+
 }
 }

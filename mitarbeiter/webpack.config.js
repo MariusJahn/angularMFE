@@ -32,6 +32,7 @@ module.exports = {
       name: "mitarbeiter",
       filename: "remoteEntry.js",
       exposes: {
+        './PokemonAPI': './src/app/feature/arbeitszeiten/api/pokemonAPI.ts',
         './AppComponent': './src/app/app.component.ts',
         './AppModule': './src/app/app.module.ts',
         './ArbeitszeitenModule': './src/app/feature/arbeitszeiten/arbeitszeiten.module.ts',
