@@ -10,17 +10,21 @@ import { SchichtenModule } from './feature/schichten/schichten.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { Person } from './feature/arbeitszeiten/models';
 import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './actions/counter.reducer';
+import { MyCounterComponent } from './my-counter/my-counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MyCounterComponent,
   ],
   imports: [
     SubheaderModule,
     ArbeitszeitenModule,
     SchichtenModule,
-    RouterModule.forChild(MITARBEITER_ROUTES),
-    StoreModule.forRoot({}, {}),
+    BrowserModule,
+    RouterModule.forRoot(MITARBEITER_ROUTES),
+    StoreModule.forRoot({ count: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
