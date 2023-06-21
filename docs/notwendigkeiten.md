@@ -18,4 +18,4 @@ Bonus: Man kann Components auch direkt um die Loadfunktion im Router mappen um d
 
 - Die Struktur an sich wird erstmal Komplexer und größer
 
-- Für die Types kann man entweder die Anwendung so schneiden, dass sie nirgendswo geteilt werden müssen ODER man schnürt die types zu einem Paket zusammen und added diese als devDependency. Hier kann man bestimmt nochmal mit Martin sprechen. Vielleicht gibt es die Möglichkeit Sie über Module mitzuteilen? Hat bei mir bisher nicht so geklappt..
+- Für die Types kann man entweder die Anwendung so schneiden, dass sie nirgendswo geteilt werden müssen ODER man schnürt die types zu einem Paket zusammen und added diese als devDependency. Hier kann man bestimmt nochmal mit Martin sprechen. Vielleicht gibt es die Möglichkeit Sie über Module mitzuteilen? Zusätzlich wird das mit wachsender Anwendung auch wartungsintensiver
