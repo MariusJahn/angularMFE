@@ -12,6 +12,7 @@ import { Person } from './feature/arbeitszeiten/models';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './actions/counter.reducer';
 import { MyCounterComponent } from './my-counter/my-counter.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,10 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
   imports: [
     SubheaderModule,
     ArbeitszeitenModule,
+    CommonModule,
     SchichtenModule,
-    BrowserModule,
-    RouterModule.forRoot(MITARBEITER_ROUTES),
-    StoreModule.forRoot({ count: counterReducer })
+    RouterModule.forChild(MITARBEITER_ROUTES),
+    StoreModule.forFeature('count',  counterReducer ),
   ],
   providers: [],
   bootstrap: [AppComponent]

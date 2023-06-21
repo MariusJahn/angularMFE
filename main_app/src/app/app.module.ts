@@ -9,6 +9,7 @@ import { APP_ROUTES } from './app.routes';
 
 import { SchichtenansichtComponent } from './feature/schichtenansicht/schichtenansicht.component';
 import { MitarbeiteransichtComponent } from './feature/mitarbeiteransicht/components/mitarbeiteransicht.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MitarbeiteransichtComponent } from './feature/mitarbeiteransicht/compon
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
