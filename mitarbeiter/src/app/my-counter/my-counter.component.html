@@ -1,11 +1,15 @@
-<div class="counter">
-  <h1 style="margin-bottom: 1rem; font-weight: bold;">NgRx Counter</h1>
-  <div class="counterbuttons">
-    <button class="navbutton" (click)="increment()">Increment</button>
+<div class="box">
+  <div class="counter">
+    <h1 style="margin-bottom: 1rem; font-weight: bold; justify-content: center;
+    display: flex;">NgRx Counter</h1>
+    <div class="counterbuttons">
+      <button class="navbutton" (click)="increment()">Increment</button>
 
-    <button class="navbutton" (click)="decrement()">Decrement</button>
+      <button class="navbutton" (click)="decrement()">Decrement</button>
 
-    <button class="navbutton" (click)="reset()">Reset Counter</button>
+      <button class="navbutton" (click)="reset()">Reset Counter</button>
+    </div>
+    <div style="margin-top: 1rem; font-weight: bold; justify-content: center;
+    display: flex;">Current Count: {{ count$ | async }}</div>
   </div>
-  <div style="margin-top: 1rem; font-weight: bold;">Current Count: {{ count$ | async }}</div>
 </div>
