@@ -34,7 +34,7 @@ module.exports = {
       exposes: {
         './AppComponent': './src/app/app.component.ts',
         './AppModule': './src/app/app.module.ts',
-        './ArbeitszeitenModule': './src/app/arbeitszeiten/arbeitszeiten.module.ts',
+        './ArbeitszeitenModule': './src/app/feature/arbeitszeiten/arbeitszeiten.module.ts',
         './Subheader': './src/app/subheader/subheader.component.ts',
       },
 
