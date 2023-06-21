@@ -19,3 +19,5 @@
 - Für die Types kann man entweder die Anwendung so schneiden, dass sie nirgendswo geteilt werden müssen ODER man schnürt die types zu einem Paket zusammen und added diese als devDependency. Hier kann man bestimmt nochmal mit Martin sprechen. Vielleicht gibt es die Möglichkeit Sie über Module mitzuteilen? Zusätzlich wird das mit wachsender Anwendung auch wartungsintensiver
 
 - Wenn man Module reinlädt sind die erstmal nicht Typsicher. Allerdings kann man Components auch direkt um die Loadfunktion im Router mappen um die Komponente zu nutzen. Siehe hier im [Video](https://www.youtube.com/watch?v=ox0aoy2KHK0). Aber ist das dann noch Micro?
+
+- Wenn man die Frontends einzeln nutzen will, fliegt auf jeden Fall erstmal das Routing auseinander, da die Pfade zur Shell passen müssen und gleichzeitig das forRoot wieder rein muss damit man daran arbeiten kann.

@@ -7,6 +7,7 @@ import { MITARBEITER_ROUTES } from './app.routes';
 import { SubheaderModule } from './subheader/subheader.module';
 import { ArbeitszeitenModule } from './feature/arbeitszeiten/arbeitszeiten.module';
 import { SchichtenModule } from './feature/schichten/schichten.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SchichtenModule } from './feature/schichten/schichten.module';
     SubheaderModule,
     ArbeitszeitenModule,
     SchichtenModule,
+    BrowserModule,
     RouterModule.forChild(MITARBEITER_ROUTES),
   ],
   providers: [],
