@@ -1,0 +1,12 @@
+.counter {
+  justify-content: center;
+  flex-direction: column;
+  border: 1px dashed red;
+  padding: 2rem;
+}
+
+.counterbuttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
