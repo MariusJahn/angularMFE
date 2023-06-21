@@ -16,7 +16,7 @@ export class MyCounterComponent {
   constructor(store: Store<{ count: number }>) {
     this.store = store;
 
-    this.count$ = store.pipe(select('count'));
+    this.count$ = store.select('count');
   }
 
   ngOnInit() {
