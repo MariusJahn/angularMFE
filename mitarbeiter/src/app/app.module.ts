@@ -8,6 +8,8 @@ import { SubheaderModule } from './subheader/subheader.module';
 import { ArbeitszeitenModule } from './feature/arbeitszeiten/arbeitszeiten.module';
 import { SchichtenModule } from './feature/schichten/schichten.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { Person } from './feature/arbeitszeiten/models';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,15 @@ import { BrowserModule } from '@angular/platform-browser';
     SubheaderModule,
     ArbeitszeitenModule,
     SchichtenModule,
-    BrowserModule,
     RouterModule.forChild(MITARBEITER_ROUTES),
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  person: Person = {
+    name: '',
+    alter: 0
+  };
+}

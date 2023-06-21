@@ -11,7 +11,6 @@ import { BrowserModule } from '@angular/platform-browser';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
     RouterModule.forChild(APP_ROUTES)
   ],
   providers: [],
